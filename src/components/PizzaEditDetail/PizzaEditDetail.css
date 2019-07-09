@@ -1,0 +1,12 @@
+.content-input {
+  display: flex;
+  flex-flow: column;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.detail-item-pizza {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
