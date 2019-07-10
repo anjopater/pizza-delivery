@@ -44,9 +44,10 @@ class Home extends Component {
             });
         } else {
             api.addPizzas(item).then((r) => {
-                const newItem = r.data;
+                const newItem = r.data.data;
+                const newPizzas = [...this.state.pizzas, newItem];
                 this.setState(prevState => ({
-                    pizzas: [...prevState.arrayvar, newItem],
+                    pizzas: newPizzas,
                     currentItem: newItem
                 }))
             });
