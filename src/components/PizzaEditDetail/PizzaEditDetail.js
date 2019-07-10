@@ -47,19 +47,21 @@ export default class PizzaEditDetail extends Component {
     render() {
         return (
             <div className="detail-item-pizza">
-                {/* <img src={this.state.imageUrl} /> */}
-                <div>
-                    <div className="content-input">
-                        <label>Image Url</label>
-                        <input type="text" id="imageUrl" value={this.state.imageUrl} onChange={this.onChangeImageUrl} />
-                    </div>
-                    <div className="content-input">
-                        <label>Name</label>
-                        <input type="text" id="name" value={this.state.name} onChange={this.onChangeName} />
-                    </div>
-                    <div className="content-input">
-                        <label>Price</label>
-                        <input type="text" id="price" value={this.state.price} onChange={this.onChangePrice} />
+                <div className="flex-center">
+                    <img src={this.state.imageUrl} />
+                    <div>
+                        <div className="content-input">
+                            <label>Image Url</label>
+                            <input type="text" id="imageUrl" value={this.state.imageUrl} onChange={this.onChangeImageUrl} />
+                        </div>
+                        <div className="content-input">
+                            <label>Name</label>
+                            <input type="text" id="name" value={this.state.name} onChange={this.onChangeName} />
+                        </div>
+                        <div className="content-input">
+                            <label>Price</label>
+                            <input type="text" id="price" value={this.state.price} onChange={this.onChangePrice} />
+                        </div>
                     </div>
                 </div>
                 <div>

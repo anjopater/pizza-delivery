@@ -9,4 +9,11 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  margin-left: 13em;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
 }

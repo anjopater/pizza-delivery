@@ -1,14 +1,15 @@
 .content-list {
   display: flex;
-  overflow: auto;
 }
 
 .item-pizza {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #d4d4d4;
   margin: 5px;
+  text-align: left;
+  width: 100%;
 }
 
 .item-pizza:hover {
@@ -19,6 +20,51 @@
   width: 100px;
 }
 
+.item-pizza > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .pizzas-list {
   border-right: 1px solid #d4d4d4;
+  overflow-y: auto;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.pizzas-list a:nth-last-child(2) {
+  margin-bottom: 3em;
+}
+
+.add-new-button-content {
+  position: fixed;
+  bottom: 0;
+}
+
+.add-new-button-content  button {
+  width: 15em;
+  height: 50px;
+  text-align: center;
+  background-color: #f7b71d;
+  border: 0px;
+  cursor: pointer;
+}
+
+.icon-close {
+  font-weight: 600;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  /* font-size: small; */
+  /* transform: rotate(-4deg); */
+  cursor: pointer;
+  margin: 4px;
+}
+
+.position-relative {
+  position: relative;
+}
+

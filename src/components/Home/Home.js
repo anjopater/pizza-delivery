@@ -45,14 +45,26 @@ class Home extends Component {
         } else {
             api.addPizzas(item).then((r) => {
                 const newItem = r.data;
-                const newLista = this.state.pizzas.unshift(newItem);
-                this.setState({ currentItem: newItem._id, pizzas: { ...newLista } });
+                this.setState(prevState => ({
+                    pizzas: [...prevState.arrayvar, newItem],
+                    currentItem: newItem
+                  }))
             });
         }
     }
 
     onNewItem = () => {
         this.setState({ currentItem: { _id: 0, name: '', price: '', imageUrl: '' } })
+    }
+
+    onDeleteItem = (item, i) => {
+         api.deletePizza(item).then((r) => {
+             const newPizzas = this.state.pizzas.filter(function(pizza) { 
+                return pizza._id !== item._id 
+            });
+
+            this.setState({pizzas: newPizzas, currentItem: newPizzas[0] });
+         });
     }
 
     render() {
@@ -62,7 +74,7 @@ class Home extends Component {
             <div>
                 {pizzas.length > 0 && (
                     <div className="content-list">
-                        <PizzaList pizzas={pizzas} onSelectItem={this.onSelectItem} onNewItem={this.onNewItem} />
+                        <PizzaList pizzas={pizzas} onSelectItem={this.onSelectItem} onNewItem={this.onNewItem} onDeleteItem={this.onDeleteItem}/>
                         <PizzaEditDetail updateItemList={this.updateItemList} item={this.state.currentItem} />
                     </div>
                 )}

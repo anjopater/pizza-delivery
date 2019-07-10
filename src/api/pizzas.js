@@ -24,3 +24,11 @@ export const addPizzas = (item) => {
         data: item
     });
 };
+
+export const deletePizza = (item) => {
+    return axios.request({
+        url: config.API_URL + `/api/pizzas/${item._id}`,
+        method: 'DELETE',
+        data: item
+    });
+};
