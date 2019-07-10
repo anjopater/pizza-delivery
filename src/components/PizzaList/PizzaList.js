@@ -24,9 +24,9 @@ export default class PizzaList extends Component {
     render() {
         const { pizzas, onNewItem } = this.props;
         const items = pizzas.map((p, i) => {
-            return <div className="position-relative">
-                <div index={i} className="icon-close" onClick={this.onDeleteItem.bind(this, p, i)}>x</div>
-                <a id={p._id} key={i} href="javascript:;" className="item-pizza" onClick={this.onSelectItem.bind(this, p)}>
+            return <div key={i} className="position-relative">
+                <div  index={i} className="icon-close" onClick={this.onDeleteItem.bind(this, p, i)}>x</div>
+                <a id={p._id} href="javascript:;" className="item-pizza" onClick={this.onSelectItem.bind(this, p)}>
                     <img src={p.imageUrl} />
                     <div>
                         <div> {p.name}</div>
