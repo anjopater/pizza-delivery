@@ -48,7 +48,7 @@ class Home extends Component {
                 this.setState(prevState => ({
                     pizzas: [...prevState.arrayvar, newItem],
                     currentItem: newItem
-                  }))
+                }))
             });
         }
     }
@@ -58,13 +58,13 @@ class Home extends Component {
     }
 
     onDeleteItem = (item, i) => {
-         api.deletePizza(item).then((r) => {
-             const newPizzas = this.state.pizzas.filter(function(pizza) { 
-                return pizza._id !== item._id 
+        api.deletePizza(item).then((r) => {
+            const newPizzas = this.state.pizzas.filter(function (pizza) {
+                return pizza._id !== item._id
             });
 
-            this.setState({pizzas: newPizzas, currentItem: newPizzas[0] });
-         });
+            this.setState({ pizzas: newPizzas, currentItem: newPizzas[0] });
+        });
     }
 
     render() {
@@ -74,7 +74,7 @@ class Home extends Component {
             <div>
                 {pizzas.length > 0 && (
                     <div className="content-list">
-                        <PizzaList pizzas={pizzas} onSelectItem={this.onSelectItem} onNewItem={this.onNewItem} onDeleteItem={this.onDeleteItem}/>
+                        <PizzaList pizzas={pizzas} onSelectItem={this.onSelectItem} onNewItem={this.onNewItem} onDeleteItem={this.onDeleteItem} />
                         <PizzaEditDetail updateItemList={this.updateItemList} item={this.state.currentItem} />
                     </div>
                 )}

@@ -44,7 +44,7 @@
   bottom: 0;
 }
 
-.add-new-button-content  button {
+.add-new-button-content button {
   width: 15em;
   height: 50px;
   text-align: center;
@@ -67,4 +67,3 @@
 .position-relative {
   position: relative;
 }
-
